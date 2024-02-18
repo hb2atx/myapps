@@ -123,3 +123,13 @@ module.exports = {
     updateUser,
     deleteUser
 }
+
+
+
+
+
+
+
+// git branch -M main
+// hb2atx@DESKTOP-HQE1TR9:~/myapps/backend$ git remote add origin git@github.com:hb2atx/myapps.git
+// hb2atx@DESKTOP-HQE1TR9:~/myapps/backend$ git push -u origin main

@@ -24,6 +24,8 @@ app.use(cookieParser())
 app.use('/', require('./routes/root'))
 app.use('/auth', require('./routes/authRoutes'))
 app.use('/users', require('./routes/userRoutes'))
+app.use('/player', require('./routes/playerRoutes'))
+app.use('/avg', require('./routes/avgRoutes'))
 
 // css, images, html files
 app.use('/', express.static(path.join(__dirname, 'public')))
