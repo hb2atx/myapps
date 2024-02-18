@@ -5,8 +5,9 @@ require('express-async-errors')
 const express = require('express');
 const app = express();
 const path = require('path'); 
-const { logger } = require('./middleware/logger')
+const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
+const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const db = require('./db');
@@ -16,9 +17,12 @@ const PORT = process.env.PORT || 3500
 // middleware
 app.use(logger)
 app.use(cors(corsOptions))
+app.use(express.json())
+app.use(cookieParser())
 
 // routes
 app.use('/', require('./routes/root'))
+app.use('/auth', require('./routes/authRoutes'))
 app.use('/users', require('./routes/userRoutes'))
 
 // css, images, html files
